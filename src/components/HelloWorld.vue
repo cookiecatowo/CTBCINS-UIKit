@@ -10,7 +10,7 @@ const count = ref(0)
 
 <template>
   <h1 class="text-3xl font-bold underline">{{ msg }}</h1>
-
+  <Button label="Button Test" size="large"  />
   <div class="card">
     <button type="button" @click="count++">count is {{ count }}</button>
     <p>
@@ -32,7 +32,11 @@ const count = ref(0)
   </p>
   <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
 </template>
-
+<script>
+import Button from '../stories/Button.vue';
+export default {
+}
+</script>
 <style scoped>
 .read-the-docs {
   color: #888;

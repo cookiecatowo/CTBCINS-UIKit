@@ -14,7 +14,7 @@ export default {
       type: String,
       required: true
     },
-    primary: {
+    outline: {
       type: Boolean,
       default: false
     },
@@ -39,11 +39,11 @@ export default {
     props = reactive(props);
     return {
       classes: computed(() => ({
-        'bg-main text-white hover:brightness-[0.85]': props.primary,
-        'border-[#037E80] text-[#037E80] border-2 bg-transparent hover:bg-black hover:bg-opacity-[0.15]': !props.primary,
+        'bg-main text-white hover:brightness-[0.85] disabled:hover:brightness-100': !props.outline,
+        'border-[#037E80] text-[#037E80] border-2 bg-transparent hover:bg-black hover:bg-opacity-[0.15]': props.outline,
       })),
       style: computed(() => {
-        if(props.primary) {
+        if(!props.outline) {
           return {
             backgroundColor: props.color,
           }

@@ -1,7 +1,7 @@
 {
-  "name": "vite-storybook",
-  "private": true,
-  "version": "0.0.0",
+  "name": "b2b-ui-storybook",
+  "version": "1.0.0",
+  "main": "dist/b2b-ui-storybook.js",
   "type": "module",
   "scripts": {
     "dev": "vite",
