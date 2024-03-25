@@ -1,13 +1,12 @@
 import { fn } from '@storybook/test';
-import Button from './Button.vue';
+import Button3D from './Button3D.vue';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 export default {
-  title: 'Example/Button',
-  component: Button,
+  title: 'Example/Button3D',
+  component: Button3D,
   tags: ['autodocs'],
   argTypes: {
-    size: { control: { type: 'radio' }, options: ['sm', 'md', 'lg'] },
     color: { control: 'color' },
     width: { control: 'text' },
     height: { control: 'text' },
@@ -19,45 +18,41 @@ export default {
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary = {
   args: {
-    label: '重新整理',
+    label: '選擇 Excel 上傳',
+  },
+  parameters: {
+    slots: {
+      pic: {
+        template: `<img src="/testImg/3dBtn1.png"/>`,
+      },
+    },
   },
 };
 export const Outline = {
   args: {
     outline: true,
-    label: '儲存紀錄',
+    label: '影像辨識',
+  },
+  parameters: {
+    slots: {
+      pic: {
+        template: `<img src="/testImg/3dBtn2.png"/>`,
+      },
+    },
   },
 };
-export const Small = {
-  args: {
-    size: 'sm',
-    label: '修改',
-  },
-};
-export const Medium = {
-  args: {
-    size: 'md',
-    label: '重新整理',
-  },
-};
-export const Large = {
-  args: {
-    size: 'lg',
-    label: '下一步',
-  },
-};
-export const LargeOutline = {
-  args: {
-    size: 'lg',
-    label: '上一步',
-    outline: true
-  },
-};
+
 export const Disabled = {
   args: {
-    size: 'lg',
-    label: '提交審核',
+    label: '影像辨識',
     disabled: true
+  },
+  parameters: {
+    slots: {
+      pic: {
+        template: `<img src="/testImg/3dBtn2.png"/>`,
+      },
+    },
   },
 };
 export const CustomizeColor = {
@@ -65,22 +60,24 @@ export const CustomizeColor = {
     color: '#474747',
     label: '查看全部',
   },
+  parameters: {
+    slots: {
+      pic: {
+        template: `<img src="/testImg/3dBtn1.png"/>`,
+      },
+    },
+  },
 };
 export const CustomizeWidth = {
   args: {
     label: '確認',
-    width: '500px',
-    height: '100px',
-  },
-};
-export const CustomizeIcon = {
-  args: {
-    label: '刪除資料',
+    width: '200px',
+    height: '70px',
   },
   parameters: {
     slots: {
-      icon: {
-        template: `<p>X</p>`,
+      pic: {
+        template: `<img src="/testImg/3dBtn1.png" class="h-10"/>`,
       },
     },
   },

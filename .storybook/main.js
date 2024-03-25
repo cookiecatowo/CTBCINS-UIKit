@@ -6,7 +6,8 @@ const config = {
     "@storybook/addon-essentials",
     "@chromatic-com/storybook",
     "@storybook/addon-interactions",
-    "@storybook/addon-themes"
+    "@storybook/addon-themes",
+    'storybook-addon-vue-slots',
   ],
   framework: {
     name: "@storybook/vue3-vite",

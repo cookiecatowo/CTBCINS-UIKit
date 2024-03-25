@@ -1,4 +1,4 @@
-import '../src/style.css';
+import '../src/assets/index.css';
 import { withThemeByDataAttribute } from "@storybook/addon-themes";
 
 /** @type { import('@storybook/vue3').Preview } */
