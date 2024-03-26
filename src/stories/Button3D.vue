@@ -35,7 +35,7 @@ const props = defineProps ({
 const emits = defineEmits(["click"]);
 
 const classes = computed(() => ({
-  'bg-main text-white ': !props.outline,
+  'bg-primary text-white ': !props.outline,
   'bg-white text-black': props.outline,
 }));
 

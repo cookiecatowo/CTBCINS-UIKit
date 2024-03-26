@@ -5,7 +5,7 @@
         :variant="'outline'"
         :class="cn(
           'w-[280px] justify-between text-left font-normal',
-          !date && 'text-muted-foreground',
+          !date && 'text-black',
         )"
       >
         <span :class="{'text-textDisabled': !date}">

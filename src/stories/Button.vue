@@ -40,7 +40,7 @@ const props = defineProps ({
 const emits = defineEmits(["click"]);
 
 const classes = computed(() => ({
-  'bg-main text-white border-none hover:brightness-[0.85] disabled:hover:brightness-100': !props.outline,
+  'bg-primary text-white border-none hover:brightness-[0.85] disabled:hover:brightness-100': !props.outline,
   'border-[#037E80] text-[#037E80] bg-transparent hover:bg-black hover:bg-opacity-[0.15]': props.outline,
 }));
 
@@ -62,13 +62,15 @@ const style = computed(() => {
 });
 
 const size = computed(() => {
-  switch (props.size || 'md'){
+  switch (props.size){
     case 'sm':
-      return 'text-base min-h-[38px] min-w-[85px] border'
+      return 'text-base h-[38px] w-[85px] border'
     case 'md':
-      return 'text-base min-h-[38px] min-w-[137px] border'
+      return 'text-base h-[38px] w-[137px] border'
     case 'lg':
-      return 'text-lg min-h-[56px] min-w-[212px] border-2'
+      return 'text-lg h-[56px] w-[212px] border-2'
+    default:
+    return 'text-base min-h-[38px] min-w-[85px] border'
   }
 });
 const onClick = () => {

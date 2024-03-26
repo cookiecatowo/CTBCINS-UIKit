@@ -7,7 +7,7 @@ export default {
   component: Button,
   tags: ['autodocs'],
   argTypes: {
-    size: { control: { type: 'radio' }, options: ['sm', 'md', 'lg'] },
+    size: { control: { type: 'radio' }, options: ['sm', 'md', 'lg', 'none'] },
     color: { control: 'color' },
     width: { control: 'text' },
     height: { control: 'text' },
@@ -19,11 +19,13 @@ export default {
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary = {
   args: {
+    size: 'md',
     label: '重新整理',
   },
 };
 export const Outline = {
   args: {
+    size: 'md',
     outline: true,
     label: '儲存紀錄',
   },
@@ -62,6 +64,7 @@ export const Disabled = {
 };
 export const CustomizeColor = {
   args: {
+    size: 'md',
     color: '#474747',
     label: '查看全部',
   },
@@ -75,6 +78,7 @@ export const CustomizeWidth = {
 };
 export const CustomizeIcon = {
   args: {
+    size: 'md',
     label: '刪除資料',
   },
   parameters: {
