@@ -8,7 +8,7 @@
       <div class="relative w-full items-center" >
         <RadioGroup v-model='updateModelValue' class="flex gap-4 flex-wrap" :class="{ 'pr-12': !!tooltip, 'flex-col': column }">
           <div class="flex items-center space-x-2" :class="{'grow': !radioWidth}" :style="style" v-for="item in list">
-            <RadioGroupItem :value="item.value" :checked="updateModelValue == item.value"/>
+            <RadioGroupItem :value="item.value" :checked="updateModelValue == item.value" @click="onClick(item.value)"/>
             <Label class="text-base font-normal">{{ item.label }}</Label>
           </div>
         </RadioGroup>
@@ -29,7 +29,7 @@ import { computed, defineProps } from 'vue';
 
 const props = defineProps({
   modelValue: {
-    type: String,
+    type:[ String, Boolean, Number ],
   },
   list: {
     type: Array,
@@ -65,7 +65,7 @@ const props = defineProps({
     type: String
   }
 })
-const emits = defineEmits(["update:modelValue"]);
+const emits = defineEmits(["update:modelValue", "click"]);
 const updateModelValue = computed({
   get() {
     return props.modelValue;
@@ -74,6 +74,11 @@ const updateModelValue = computed({
     emits("update:modelValue", newValue);
   }
 });
+
+const onClick = (value) => {
+  emits('click', value);
+};
+
 
 const style = computed(() => {
   return {

@@ -1,4 +1,5 @@
 import Radio from './Radio.vue';
+import { fn } from '@storybook/test';
 
 export default {
   title: 'Example/Radio',
@@ -15,6 +16,7 @@ export default {
     column: { control: 'boolean' },
     radioWidth: { control: 'text' },
   },
+  args: { onClick: fn() },
 };
 
 export const Default = {

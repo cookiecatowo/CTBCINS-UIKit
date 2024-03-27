@@ -9,7 +9,7 @@ import { cn } from "../../../lib/utils";
 
 const props = defineProps({
   id: { type: String, required: false },
-  value: { type: String, required: false },
+  value: { type: [String, Boolean, Number], required: false },
   checked: { type: Boolean, required: false },
   disabled: { type: Boolean, required: false },
   required: { type: Boolean, required: false },
