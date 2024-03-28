@@ -1,30 +1,22 @@
 <template>
-  <Popover>
+  <Popover v-if="!disabled">
     <PopoverTrigger as-child>
-      <Button
-        :variant="'outline'"
-        :class="cn(
-          'w-[280px] justify-between text-left font-normal',
-          !date && 'text-black',
-        )"
-      >
-        <span :class="{'text-textDisabled': !date}">
-          {{ date ? format(date, "yyyy/MM/dd") : "Pick a date" }}
-        </span>
-        <CalendarIcon class="mr-2 h-4 w-4" />
-      </Button>
+        <CalendarIcon class="mr-2 h-4 w-4 text-[#7A7A7A] cursor-pointer"/>
     </PopoverTrigger>
-    <PopoverContent class="w-auto p-0">
-      <Calendar v-model="date" />
+    <PopoverContent class="w-auto m-2" >
+      <Calendar
+        v-if="range"
+        v-model.range="date"
+        :columns="2"
+      />
+      <Calendar v-else v-model="date" />
     </PopoverContent>
   </Popover>
+  <CalendarIcon class="mr-2 h-4 w-4 text-border" v-else/>
 </template>
 <script setup>
-import { format } from 'date-fns'
 import { Calendar as CalendarIcon } from 'lucide-vue-next'
 import { ref, watch } from 'vue';
-import { cn } from '../lib/utils'
-import { Button } from '../components/ui/button'
 import { Calendar } from '../components/ui/calendar'
 import {
   Popover,
@@ -33,7 +25,17 @@ import {
 } from '../components/ui/popover'
 
 const props = defineProps({
-  modelValue: { type: Date }
+  modelValue: { 
+    type: [ Date, Object, String ],
+  },
+  range: { 
+    type: Boolean,
+    default: false 
+  },
+  disabled: { 
+    type: Boolean,
+    default: false 
+  }
 })
 
 const date = ref(props.modelValue)
@@ -42,7 +44,10 @@ const emits = defineEmits(["update:modelValue"]);
 watch(() => props.modelValue, (value) => {
   date.value = value
 }, {immediate: true})
-watch(() => date, (value) => {
-  emits('update:modelValue', value)
+watch(() => date.value, (value) => {
+  if(value){
+    emits('update:modelValue', value )
+  }
+
 })
 </script>
