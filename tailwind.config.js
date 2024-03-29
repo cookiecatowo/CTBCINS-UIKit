@@ -37,7 +37,10 @@ module.exports = {
         background: '#FFFFFF',
       },
       fontSize: {
-        28: '28px'
+        32: '32px',
+        28: '28px',
+        24: '24px',
+        22: '22px'
       },
       keyframes: {
         "accordion-down": {

@@ -2,8 +2,9 @@
   <Tabs v-model="updateModelValue">
   <div class="flex justify-center w-full">
     <TabsList>
-      <TabsTrigger :class="[size]" :style="style" v-for="item in list" :value="item.value" @click="onClick(item.value)">
-        <img :src="item.pic" v-if="!!item.pic" :class="[props.size == 'sm' ? 'h-[60px] mb-4' : 'h-[110px] mb-6']"/>
+      <TabsTrigger class="text-sm h-[42px] w-[176px] lg:text-xl lg:h-[81px] lg:w-[353px]"
+        :style="style" v-for="item in list" :value="item.value" @click="onClick(item.value)">
+        <img :src="item.img" v-if="!!item.img" class="h-[60px] mb-4 lg:h-[110px] lg:mb-6"/>
         {{ item.label }}
       </TabsTrigger>
     </TabsList>
@@ -29,12 +30,6 @@ const props = defineProps ({
   },
   list: {
     type: Array,
-  },
-  size: {
-    type: String,
-    validator: function (value) {
-      return ['sm', 'lg'].indexOf(value) !== -1;
-    },
   },
   width: {
     type: String,
@@ -64,14 +59,6 @@ const style = computed(() => {
   }
 });
 
-const size = computed(() => {
-  switch (props.size || 'lg'){
-    case 'sm':
-      return 'text-sm h-[42px] w-[176px]'
-    case 'lg':
-      return 'text-xl h-[81px] w-[353px]'
-  }
-});
 const onClick = (value) => {
   emits('click', value);
 };

@@ -2,7 +2,7 @@
   <button type="button" :class="[classes]" 
     class="py-0 px-4  rounded-full border-2 border-border flex items-center justify-center gap-x-4 cursor-pointer disabled:bg-btnDisabled disabled:text-btnDisabledText disabled:cursor-default hover:brightness-[0.85] disabled:hover:brightness-100"
     @click="onClick" :style="style" :disabled="disabled">
-    <slot name="pic"/>
+    <slot name="img"/>
     <span class="text-28 tracking-wider">{{ label }} </span>
   </button>
 </template>

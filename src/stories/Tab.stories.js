@@ -8,7 +8,6 @@ export default {
   argTypes: {
     modelValue: { control: 'text'},
     list: { control: 'array' },
-    size: { control: { type: 'radio' }, options: ['sm', 'lg'] },
     width: { control: 'text'},
     height: { control: 'text'},
     content: {control: 'boolean'}
@@ -18,15 +17,6 @@ export default {
 export const Default = {
   args: {
     modelValue: '01',
-    size: 'lg',
-    list: [{ value: '01', label: '基本資料異動' },
-      { value: '02', label: '保額或人數異動' }]
-  }
-};
-export const Small = {
-  args: {
-    modelValue: '02',
-    size: 'sm',
     list: [{ value: '01', label: '基本資料異動' },
       { value: '02', label: '保額或人數異動' }]
   }
@@ -34,15 +24,13 @@ export const Small = {
 export const Picture = {
   args: {
     modelValue: '02',
-    size: 'lg',
-    list: [{ value: '01', label: '基本資料異動', pic: '/testImg/tab1.png' },
-      { value: '02', label: '保額或人數異動', pic: '/testImg/tab2.png' }]
+    list: [{ value: '01', label: '基本資料異動', img: '/testImg/tab1.png' },
+      { value: '02', label: '保額或人數異動', img: '/testImg/tab2.png' }]
   }
 };
 export const Content = {
   args: {
     modelValue: '02',
-    size: 'lg',
     list: [{ value: '01', label: '基本資料異動' },
       { value: '02', label: '保額或人數異動' }],
     content: true

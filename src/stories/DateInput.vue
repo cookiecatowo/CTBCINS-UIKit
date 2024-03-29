@@ -108,7 +108,7 @@ watch(() => date.value, (value) => {
   if(value instanceof Date){
     date.value = displayFormater(format(value, "yyyy-MM-dd"))
   }
-  dateDisplay.value = date.value.replace(/-/g, '')
+  dateDisplay.value =  date.value ? date.value.replace(/-/g, '') : ''
   emits('update:modelValue', value)
   
 }, {immediate: true})

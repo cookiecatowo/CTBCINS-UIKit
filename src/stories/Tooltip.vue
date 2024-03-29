@@ -9,7 +9,7 @@
        
       </TooltipTrigger>
       <TooltipContent :class="size" class="m-2">
-        {{ content }}
+      <div v-html="content"></div>
       </TooltipContent>
     </Tooltip>
   </TooltipProvider>

@@ -22,7 +22,7 @@ export const Primary = {
   },
   parameters: {
     slots: {
-      pic: {
+      img: {
         template: `<img src="/testImg/3dBtn1.png"/>`,
       },
     },
@@ -35,7 +35,7 @@ export const Outline = {
   },
   parameters: {
     slots: {
-      pic: {
+      img: {
         template: `<img src="/testImg/3dBtn2.png"/>`,
       },
     },
@@ -49,7 +49,7 @@ export const Disabled = {
   },
   parameters: {
     slots: {
-      pic: {
+      img: {
         template: `<img src="/testImg/3dBtn2.png"/>`,
       },
     },
@@ -62,7 +62,7 @@ export const CustomizeColor = {
   },
   parameters: {
     slots: {
-      pic: {
+      img: {
         template: `<img src="/testImg/3dBtn1.png"/>`,
       },
     },
@@ -76,7 +76,7 @@ export const CustomizeWidth = {
   },
   parameters: {
     slots: {
-      pic: {
+      img: {
         template: `<img src="/testImg/3dBtn1.png" class="h-10"/>`,
       },
     },

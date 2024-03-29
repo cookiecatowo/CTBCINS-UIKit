@@ -68,7 +68,7 @@ const size = computed(() => {
     case 'md':
       return 'text-base h-[38px] w-[137px] border'
     case 'lg':
-      return 'text-lg h-[56px] w-[212px] border-2'
+      return 'text-base lg:text-lg h-[38px] w-[137px] lg:h-[56px] lg:w-[212px] border lg:border-2'
     default:
     return 'text-base min-h-[38px] min-w-[85px] border'
   }
