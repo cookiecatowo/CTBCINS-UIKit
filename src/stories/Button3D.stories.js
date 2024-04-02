@@ -19,53 +19,29 @@ export default {
 export const Primary = {
   args: {
     label: '選擇 Excel 上傳',
-  },
-  parameters: {
-    slots: {
-      img: {
-        template: `<img src="/testImg/3dBtn1.png"/>`,
-      },
-    },
+    img: '/testImg/3dBtn1.png'
   },
 };
 export const Outline = {
   args: {
     outline: true,
     label: '影像辨識',
-  },
-  parameters: {
-    slots: {
-      img: {
-        template: `<img src="/testImg/3dBtn2.png"/>`,
-      },
-    },
+    img: '/testImg/3dBtn2.png'
   },
 };
 
 export const Disabled = {
   args: {
     label: '影像辨識',
-    disabled: true
-  },
-  parameters: {
-    slots: {
-      img: {
-        template: `<img src="/testImg/3dBtn2.png"/>`,
-      },
-    },
+    disabled: true,
+    img: '/testImg/3dBtn2.png'
   },
 };
 export const CustomizeColor = {
   args: {
     color: '#474747',
     label: '查看全部',
-  },
-  parameters: {
-    slots: {
-      img: {
-        template: `<img src="/testImg/3dBtn1.png"/>`,
-      },
-    },
+    img: '/testImg/3dBtn1.png'
   },
 };
 export const CustomizeWidth = {
@@ -73,13 +49,7 @@ export const CustomizeWidth = {
     label: '確認',
     width: '200px',
     height: '70px',
-  },
-  parameters: {
-    slots: {
-      img: {
-        template: `<img src="/testImg/3dBtn1.png" class="h-10"/>`,
-      },
-    },
+    img: '/testImg/3dBtn1.png'
   },
 };
 
