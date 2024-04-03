@@ -40,7 +40,11 @@ module.exports = {
         32: '32px',
         28: '28px',
         24: '24px',
-        22: '22px'
+        22: '22px',
+        18: '18px',
+      },
+      scale: {
+        '115': '1.15',
       },
       keyframes: {
         "accordion-down": {

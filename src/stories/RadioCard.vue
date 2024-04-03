@@ -1,5 +1,4 @@
-<template>
- 
+<template> 
 <div class="w-full items-center"  :class="{'mt-4 lg:mt-10': props.direction == 'top' }">
   <div class="flex gap-6 lg:gap-y-8" :class="[props.direction == 'top'? '' :'flex-col lg:flex-row flex-wrap']">
     <div
@@ -23,7 +22,7 @@
 </template>
 <script setup>
 import { Label } from '../components/ui/label';
-import { computed, defineProps } from 'vue';
+import { computed, defineProps, ref, watch } from 'vue';
 
 const props = defineProps({
   modelValue: {

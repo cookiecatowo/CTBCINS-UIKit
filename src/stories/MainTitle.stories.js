@@ -1,8 +1,8 @@
-import StyleTitle from './StyleTitle.vue';
+import MainTitle from './MainTitle.vue';
 
 export default {
-  title: 'Example/StyleTitle',
-  component: StyleTitle,
+  title: 'Example/MainTitle',
+  component: MainTitle,
   tags: ['autodocs'],
   argTypes: {
     title: { control: 'text' },
