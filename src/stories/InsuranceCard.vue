@@ -41,12 +41,15 @@ import { computed } from 'vue';
     height: {
       type: String,
     },
+    shadow: {
+      type: String,
+    },
   })
 
 const style = computed(() => {
   return {
     background: props.color,
-
+    boxShadow: '0px 14px 23px 0px ' + props.shadow,
   }
 })
 

@@ -29,6 +29,7 @@ module.exports = {
         textDisabled: '#CECECE',
         tableHead: '#3B3B3B',
         tooltip: '#ACACAC',
+        pagination: '#8F8F8F',
         radio: '#F05C37',
         white: '#FFFFFF',
         black: '#1E1E1E',

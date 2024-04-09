@@ -6,7 +6,7 @@
         <span v-if="subtitle" class="text-sm font-normal ml-1 mb-[2px]">{{ subtitle }}</span>
       </div>
       <div class="relative w-full items-center" :class="{'focus': isFocus}">
-        <Input v-model="updateModelValue" :placeholder="placeholder" :disabled="disabled"  :type="password && isHide ? 'password' : 'text'"
+        <Input v-model="updateModelValue" :placeholder="placeholder" :disabled="disabled"  :type="type"
         :class="{'pr-10': !!tooltip || !!password, 'pr-20': !!tooltip && !!password, 'border-alert': !!errMsg && !isFocus}" @focus="focus" @blur="blur"/>
         <span class="absolute end-0 inset-y-0 flex items-center justify-center px-3 gap-x-2" v-if="tooltip || password">
           <EyeIcon class="w-6 h-6 text-tooltip cursor-pointer" v-if="password && !isHide" @click="isHide = true"/>
@@ -18,7 +18,6 @@
     <span v-if="errMsg" class="text-xs text-alert">{{ errMsg }}</span>
   </div>
   
-  
 </template>
 <script setup>
 import { Input } from '../components/ui/input'
@@ -28,7 +27,7 @@ import { EyeIcon, EyeSlashIcon } from '@heroicons/vue/20/solid';
 
 const props = defineProps({
   modelValue: {
-    type: String,
+    type: [String, Number],
   },
   title: {
     type: String,
@@ -60,7 +59,11 @@ const props = defineProps({
   password: {
     type: Boolean,
     default: false
-  }
+  },
+  number: {
+    type: Boolean,
+    default: false
+  },
 })
 const emits = defineEmits(["update:modelValue", "focus", "blur"]);
 const isFocus = ref(false);
@@ -71,6 +74,7 @@ const updateModelValue = computed({
   },
   set(newValue) {
     emits("update:modelValue", newValue);
+    // console.log(typeof newValue)
   }
 });
 const focus = () => {
@@ -81,6 +85,16 @@ const blur = () => {
   isFocus.value = false
   emits("blur");
 }
+const type = computed(() => {
+  if(props.password && isHide.value){
+    return 'password'
+  }else if(props.number){
+    return 'number'
+  }
+  else{
+    return 'text'
+  }
+});
 </script>
 <style>
   .focus::before {

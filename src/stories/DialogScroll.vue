@@ -5,7 +5,7 @@
     </DialogTrigger> -->
      <DialogPortal>
       <DialogOverlay
-        class="fixed inset-0 z-49 px-4 lg:px-8 py-16 grid place-items-center overflow-y-auto bg-[#000000]/50 backdrop-blur data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"
+        class="fixed inset-0 z-50 px-4 lg:px-8 py-16 grid place-items-center overflow-y-auto bg-[#000000]/50 backdrop-blur data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"
         :style="margin"
         @click="close"
       >

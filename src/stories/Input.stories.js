@@ -36,6 +36,13 @@ export const Password = {
     password: true
   },
 };
+export const Number = {
+  args: {
+    title: '天數',
+    placeholder: '請輸入天數',
+    number: true
+  },
+};
 export const Disabled = {
   args: {
     title: '身分證號/統編',
