@@ -76,15 +76,15 @@ export const CustomizeWidth = {
     height: '100px',
   },
 };
-export const CustomizeIcon = {
+export const CustomizeContent = {
   args: {
     size: 'md',
     label: '刪除資料',
   },
   parameters: {
     slots: {
-      icon: {
-        template: `<p>X</p>`,
+      default: {
+        template: `刪除資料<p>X</p>`,
       },
     },
   },

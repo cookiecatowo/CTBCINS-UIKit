@@ -1,8 +1,9 @@
 <template>
   <button type="button" :class="[classes, size]" class="py-0 px-4 tracking-wider rounded-full flex items-center justify-center gap-x-2 cursor-pointer disabled:bg-btnDisabled disabled:border-none disabled:text-btnDisabledText disabled:cursor-default"
     @click="onClick" :style="style" :disabled="disabled">
-      {{ label }}
-      <slot name="icon"/>
+      <slot>
+        {{ label }}
+      </slot>
   </button>
 </template>
 <script setup>

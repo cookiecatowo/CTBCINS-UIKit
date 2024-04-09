@@ -10,6 +10,7 @@ export default {
     color: { control: 'color' },
     width: { control: 'text' },
     height: { control: 'text' },
+    size: { control: {type: 'radio'}, options:['sm', 'lg'] }
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   args: { onClick: fn() },
@@ -34,7 +35,16 @@ export const Disabled = {
   args: {
     label: '影像辨識',
     disabled: true,
-    img: '/testImg/3dBtn2.png'
+    img: '/testImg/3dBtn2.png',
+  },
+};
+export const Small = {
+  args: {
+    label: '選擇常用要保人',
+    outline: true,
+    size: 'sm',
+    shadow: '#4964CE24',
+    img: '/testImg/3dBtn1.png'
   },
 };
 export const CustomizeColor = {
