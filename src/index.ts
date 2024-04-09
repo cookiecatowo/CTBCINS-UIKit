@@ -16,8 +16,9 @@ import RadioCard from './stories/RadioCard.vue';
 import Select from './stories/Select.vue';
 import SubTitle from './stories/SubTitle.vue';
 import Tab from './stories/Tab.vue';
+import Table from './stories/Table.vue';
 import TableBtn from './stories/TableBtn.vue';
 import TableCard from './stories/TableCard.vue';
 import Tooltip from './stories/Tooltip.vue';
 
-export { Button, Button3D, Card, DatePicker, DateInput, Dialog, DialogScroll, Drawer, Input, InsuranceCard, MainTitle, Pagination, Radio, RadioCard, Select, SubTitle, Tab, TableBtn, TableCard, Tooltip };
+export { Button, Button3D, Card, DatePicker, DateInput, Dialog, DialogScroll, Drawer, Input, InsuranceCard, MainTitle, Pagination, Radio, RadioCard, Select, SubTitle, Tab, Table, TableBtn, TableCard, Tooltip };

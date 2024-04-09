@@ -48,7 +48,7 @@ module.exports = {
         '115': '1.15',
       },
       borderRadius: {
-        'tableCard': '18px',
+        'tableCard': '16px',
         'card': '26px',
       },
       keyframes: {

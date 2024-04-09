@@ -1,4 +1,5 @@
 import TableBtn from "./TableBtn.vue";
+import { fn } from '@storybook/test';
 
 export default {
   title: 'Example/TableBtn',
@@ -7,7 +8,8 @@ export default {
   argTypes: {
     label: { control: 'text' },
     color: { control: 'text' },
-  }
+  },
+  args: { onClick: fn() },
 };
 
 export const Default = {

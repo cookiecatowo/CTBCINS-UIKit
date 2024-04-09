@@ -60,11 +60,11 @@ const style = computed(() => {
 </script>
 <style>
 .tablecard-header{
-  border-top-left-radius: 18px;
-  border-top-right-radius: 18px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
 }
 .tablecard-footer{
-  border-bottom-left-radius: 18px;
-  border-bottom-right-radius: 18px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
 }
 </style>
