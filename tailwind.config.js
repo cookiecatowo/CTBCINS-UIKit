@@ -47,6 +47,10 @@ module.exports = {
       scale: {
         '115': '1.15',
       },
+      borderRadius: {
+        'tableCard': '18px',
+        'card': '26px',
+      },
       keyframes: {
         "accordion-down": {
           from: { height: 0 },

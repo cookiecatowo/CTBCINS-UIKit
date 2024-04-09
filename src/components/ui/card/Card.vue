@@ -10,7 +10,7 @@ const props = defineProps({
   <div
     :class="
       cn(
-        'rounded-[20px] transition-all tracking-wider',
+        'transition-all',
         props.class
       )
     "

@@ -1,7 +1,7 @@
 <template>
   <div class="relative w-full lg:w-fit h-fit  mt-4 lg:mt-0">
     <Card 
-      class="relative flex justify-between min-h-[164px] lg:min-h-0 lg:w-[350px] lg:h-[146px] lg:hover:w-[402px] lg:hover:h-[168px] card-hover overflow-hidden" 
+      class="relative flex justify-between min-h-[164px] lg:min-h-0 lg:w-[350px] lg:h-[146px] lg:hover:w-[402px] lg:hover:h-[168px] rounded-[20px] tracking-wider card-hover overflow-hidden" 
       :style="style"
       @click="onClick">
       <div class="text-white flex flex-col lg:justify-center items-center lg:items-start lg:gap-y-2 p-4 lg:p-0 lg:pl-8 w-full lg:w-fit lg:min-w-[181px] lg:max-w-[210px] mt-12 lg:mt-0">
