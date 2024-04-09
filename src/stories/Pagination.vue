@@ -1,22 +1,22 @@
 <template>
-  <div class="flex items-center justify-between text-pagination" :class="[totalPages > 6 ? 'w-[420px]' : 'w-fit']">
+  <div class="flex items-center justify-between text-pagination" :class="[totalPages > 6 ? 'w-[370px] lg:w-[420px]' : 'w-fit']">
     <ChevronDoubleLeftIcon class="h-[18px] stroke-2" @click="previousPage" 
       :class="[currentPage == 1 ? '' : 'cursor-pointer text-primary', totalPages < 7 ? 'px-4' : '']"  
       :disabled="currentPage == 1"/>
-    <div class="flex gap-x-2 text-xl">
-      <span class="flex items-center justify-center pb-px w-9 h-9" 
+    <div class="flex gap-x-2 text-base lg:text-xl">
+      <span class="flex items-center justify-center pb-px w-7 h-7 lg:w-9 lg:h-9" 
         :class="[1 == currentPage ? 'bg-primary text-white rounded-full' : 'cursor-pointer']" @click="currentPage = 1"> 
         1
       </span>
       <span v-if="!showPageController(2)  && totalPages > 5">...</span>
       <template v-for="n in totalPages">
-        <span v-if="showPageController(n)" class="flex items-center justify-center pb-px w-9 h-9" 
+        <span v-if="showPageController(n)" class="flex items-center justify-center pb-px w-7 h-7 lg:w-9 lg:h-9" 
           :class="[n == currentPage ? 'bg-primary text-white rounded-full' : 'cursor-pointer']" @click="currentPage = n"> 
           {{ n }} 
         </span>
       </template>
       <span v-if="!showPageController(totalPages - 1 ) && totalPages > 5">...</span>
-      <span v-if="totalPages > 1" class="flex items-center justify-center pb-px w-9 h-9" 
+      <span v-if="totalPages > 1" class="flex items-center justify-center pb-px w-7 h-7 lg:w-9 lg:h-9" 
         :class="[totalPages == currentPage ? 'bg-primary text-white rounded-full' : 'cursor-pointer']" @click="currentPage = totalPages"> 
         {{ totalPages }}
       </span>
