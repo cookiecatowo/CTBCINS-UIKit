@@ -96,6 +96,7 @@ const vCalendarSlots = computed(() => {
       trim-weeks
       :transition="'none'"
       :columns="columns"
+      is-required
     >
       <template v-for="(_, slot) of vCalendarSlots" #[slot]="scope">
         <slot :name="slot" v-bind="scope" />
@@ -114,10 +115,13 @@ const vCalendarSlots = computed(() => {
 
 <style lang="css">
 .calendar {
-  @apply p-3 text-center;
+  @apply p-3 text-center; 
 }
-.calendar .vc-pane-layout {
+/* .calendar .vc-pane-layout {
   @apply grid gap-4;
+} */
+.calendar .vc-pane-layout {
+  @apply flex flex-wrap gap-4;
 }
 .calendar .vc-title {
   @apply text-sm font-medium relative z-20;

@@ -28,7 +28,7 @@
               </slot>
             </DialogDescription>
           </DialogHeader>
-          <div :class="{'overflow-y-auto grow': props.size == 'lg' }">
+          <div :class="{'overflow-y-auto grow': props.size == 'lg' || scroll }">
             <slot/>
           </div>
             
@@ -85,7 +85,14 @@ const props = defineProps({
   force: {
     type: Boolean,
     default: false
-  }
+  },
+  scroll: {
+    type: Boolean,
+    default: false
+  },
+  padding: {
+    type: String
+  },
 })
 
 const open = ref(props.modelValue)
@@ -110,12 +117,15 @@ const size = computed(() => {
       return 'max-w-[850px] min-h-[300px]'
     case 'lg': 
       return 'max-w-[90%] h-[80%]'
+    default:
+      return props.size
   }
 });
 const style = computed(() => {
   return {
     width: props.width,
-    height: props.height
+    height: props.height,
+    padding: props.padding
   }
 });
 </script>
