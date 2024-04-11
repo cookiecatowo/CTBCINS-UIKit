@@ -1,5 +1,5 @@
 <template>
-  <div class="relative w-full lg:w-fit h-fit  mt-4 lg:mt-0">
+  <div class="relative w-full lg:w-fit h-fit  mt-4 lg:mt-0 cursor-pointer">
     <Card 
       class="relative flex justify-between min-h-[164px] lg:min-h-0 lg:w-[350px] lg:h-[146px] lg:hover:w-[402px] lg:hover:h-[168px] rounded-[20px] tracking-wider card-hover overflow-hidden" 
       :style="style"

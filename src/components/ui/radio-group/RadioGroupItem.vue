@@ -42,8 +42,28 @@ const forwardedProps = useForwardProps(delegatedProps);
       <Circle class="h-2.5 w-2.5 fill-primary text-primary" />
     </RadioGroupIndicator> -->
     <div
-      class="flex items-center justify-center w-full h-full relative after:content-[''] after:block after:w-[9px] after:h-[9px] after:rounded-[50%]"
-      :class="[props.checked ? 'after:bg-white' : 'after:bg-[#D4D4D4]']"
+      class="flex items-center justify-center w-full h-full relative radio-content"
+      :class="[props.checked ? 'after:bg-white scale-active' : 'after:bg-[#D4D4D4]']"
     />
   </RadioGroupItem>
 </template>
+<style>
+
+.radio-content::after {
+  content: '';
+  display: block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.scale-active.radio-content::after {
+	animation: scaleInOut 0.2s; 
+}
+
+@keyframes scaleInOut { 
+    0%   { transform: scale(1, 1); } 
+    50%  { transform: scale(1.3, 1.3); } 
+    100%   { transform: scale(1, 1); }
+}
+</style>
