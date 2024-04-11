@@ -5,19 +5,19 @@
       :disabled="currentPage == 1"/>
     <div class="flex gap-x-2 text-base lg:text-xl">
       <span class="flex items-center justify-center pb-px w-7 h-7 lg:w-9 lg:h-9" 
-        :class="[1 == currentPage ? 'bg-primary text-white rounded-full' : 'cursor-pointer']" @click="currentPage = 1"> 
+        :class="[1 == currentPage ? 'bg-primary text-white rounded-full page-scale-active' : 'cursor-pointer']" @click="currentPage = 1"> 
         1
       </span>
       <span v-if="!showPageController(2)  && totalPages > 5">...</span>
       <template v-for="n in totalPages">
         <span v-if="showPageController(n)" class="flex items-center justify-center pb-px w-7 h-7 lg:w-9 lg:h-9" 
-          :class="[n == currentPage ? 'bg-primary text-white rounded-full' : 'cursor-pointer']" @click="currentPage = n"> 
+          :class="[n == currentPage ? 'bg-primary text-white rounded-full page-scale-active' : 'cursor-pointer']" @click="currentPage = n"> 
           {{ n }} 
         </span>
       </template>
       <span v-if="!showPageController(totalPages - 1 ) && totalPages > 5">...</span>
       <span v-if="totalPages > 1" class="flex items-center justify-center pb-px w-7 h-7 lg:w-9 lg:h-9" 
-        :class="[totalPages == currentPage ? 'bg-primary text-white rounded-full' : 'cursor-pointer']" @click="currentPage = totalPages"> 
+        :class="[totalPages == currentPage ? 'bg-primary text-white rounded-full page-scale-active' : 'cursor-pointer']" @click="currentPage = totalPages"> 
         {{ totalPages }}
       </span>
     </div>
@@ -97,3 +97,14 @@ export default {
   }
 };
 </script>
+<style>
+.page-scale-active {
+	animation: page-scale 0.3s; 
+}
+
+@keyframes page-scale { 
+    0%   { transform: scale(1, 1); } 
+    50%  { transform: scale(0.9, 0.9); } 
+    100%   { transform: scale(1, 1); }
+}
+</style>

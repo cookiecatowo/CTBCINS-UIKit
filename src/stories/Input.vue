@@ -101,12 +101,19 @@ const type = computed(() => {
     z-index: 10;
     content: '';
     position: absolute;
-    left: 4px;
+    left: 50%;
+    transform: translateX(-50%);
     bottom: 0;
     width: calc( 100% - 8px );
     height: 3px;
     border: 2px solid #037E80;
     border-radius: 4px;
     pointer-events: none;
+    animation: input-scale 0.3s; 
   }
+
+  @keyframes input-scale { 
+      0%   { width: 0px; } 
+  }
+
 </style>
