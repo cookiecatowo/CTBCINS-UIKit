@@ -2,8 +2,8 @@
 <div class="w-full items-center"  :class="{'mt-4 lg:mt-10': props.direction == 'top' }">
   <div class="flex gap-6 lg:gap-y-8" :class="[props.direction == 'top'? '' :'flex-col lg:flex-row flex-wrap']">
     <div
-      class="rounded-[20px] p-5 flex w-full lg:w-[453px] transition-all" :style="style" v-for="item in list"
-      :class="[radio == item.value ? 'outline outline-primary outline-4 scale-active' : 'outline outline-border outline-2', direction]" 
+      class="rounded-[20px] p-5 flex w-full lg:w-[453px] transition-all cursor-pointer" :style="style" v-for="item in list"
+      :class="[radio == item.value ? 'outline outline-primary outline-4 radio-card-scale-active' : 'outline outline-border outline-2', direction]" 
       @click="onClick(item.value)">
       <div class="col-span-2 relative flex justify-center items-center" :class="{'pr-4 lg:pr-6': props.direction == 'left' }" >
         <img :src="item.img" 
@@ -80,11 +80,11 @@ const style = computed(() => {
 });
 </script>
 <style>
-.scale-active {
-	animation: scaleInOut 0.3s; 
+.radio-card-scale-active {
+	animation: radio-card-scale 0.3s; 
 }
 
-@keyframes scaleInOut { 
+@keyframes radio-card-scale { 
     0%   { transform: scale(1, 1); } 
     50%  { transform: scale(0.97, 0.97); } 
     100%   { transform: scale(1, 1); }

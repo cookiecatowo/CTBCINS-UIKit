@@ -43,7 +43,7 @@ const forwardedProps = useForwardProps(delegatedProps);
     </RadioGroupIndicator> -->
     <div
       class="flex items-center justify-center w-full h-full relative radio-content"
-      :class="[props.checked ? 'after:bg-white scale-active' : 'after:bg-[#D4D4D4]']"
+      :class="[props.checked ? 'after:bg-white radio-scale-active' : 'after:bg-[#D4D4D4]']"
     />
   </RadioGroupItem>
 </template>
@@ -57,11 +57,11 @@ const forwardedProps = useForwardProps(delegatedProps);
   border-radius: 50%;
 }
 
-.scale-active.radio-content::after {
-	animation: scaleInOut 0.2s; 
+.radio-scale-active.radio-content::after {
+	animation: radio-scale 0.2s; 
 }
 
-@keyframes scaleInOut { 
+@keyframes radio-scale { 
     0%   { transform: scale(1, 1); } 
     50%  { transform: scale(1.3, 1.3); } 
     100%   { transform: scale(1, 1); }
