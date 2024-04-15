@@ -40,10 +40,10 @@ export const Slot = {
   },
   parameters:{
     slots:{
-      s01:{
+      s_01:{
         template: '<div><li>限要/被保險人本人信用卡進行付款</li><li>請於生效日前1~2個工作日前完成繳納</li></div>'
       },
-      s02:{
+      s_02:{
         template: '<div><li>法人機關團體、未持有信用卡之要/被保險人適用</li><li> 請於生效日前2~3個工作日前完成繳納</li></div>'
       }
     }

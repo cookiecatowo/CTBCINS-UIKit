@@ -12,7 +12,7 @@
       </div>
       <div class="col-span-3 flex flex-col justify-center gap-y-2 text-sm lg:text-base font-normal" :class="{'items-center': props.direction == 'top' }">
         <Label class="text-lg lg:text-xl font-semibold">{{ item.label }}</Label>
-        <slot :name="'s'+ item.value">
+        <slot :name="'s_'+ item.value">
           {{ item.description }}
         </slot>
       </div>

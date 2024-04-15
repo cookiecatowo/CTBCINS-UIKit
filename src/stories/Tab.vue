@@ -2,7 +2,7 @@
   <Tabs v-model="updateModelValue">
   <div class="flex justify-center w-full">
     <TabsList>
-      <TabsTrigger class="text-sm h-[42px] w-[176px] lg:text-xl lg:h-[81px] lg:w-[353px]"
+      <TabsTrigger class="text-sm h-[42px] w-[176px] lg:text-xl lg:h-[81px] lg:w-[353px] transition-all"
         :style="style" v-for="item in list" :value="item.value" @click="onClick(item.value)">
         <img :src="item.img" v-if="!!item.img" class="h-[60px] mb-4 lg:h-[110px] lg:mb-6"/>
         {{ item.label }}
@@ -22,7 +22,7 @@ import {
   TabsList,
   TabsTrigger,
 } from '../components/ui/tabs'
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
 
 const props = defineProps ({
   modelValue: {
@@ -43,14 +43,15 @@ const props = defineProps ({
   }
 })
 const emits = defineEmits(["click", "update:modelValue"]);
-const updateModelValue = computed({
-  get() {
-    return props.modelValue;
-  },
-  set(newValue) {
-    emits("update:modelValue", newValue);
-  }
-});
+// const updateModelValue = computed({
+//   get() {
+//     return props.modelValue;
+//   },
+//   set(newValue) {
+//     emits("update:modelValue", newValue);
+//   }
+// });
+const updateModelValue = ref('')
 
 const style = computed(() => {
   return {

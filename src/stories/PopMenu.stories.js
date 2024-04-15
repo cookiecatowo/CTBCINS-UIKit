@@ -33,13 +33,13 @@ export const Slot = {
   },
   parameters: {
     slots: {
-      s01: {
+      s_01: {
         template: '<span>修改</span><span>+</span>'
       },
-      s02: {
+      s_02: {
         template: '<span>檢視</span><span>*</span>'
       },
-      s03: {
+      s_03: {
         template: '<span>刪除</span><span>X</span>'
       },
     }

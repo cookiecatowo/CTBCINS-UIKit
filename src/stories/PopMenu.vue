@@ -7,7 +7,7 @@
       <template v-for="item in list">
         <div class="hover:bg-inputDisabled w-full min-h-[60px] flex justify-between items-center p-3 cursor-pointer" 
         :class="[item.delete ? 'text-red': '']" v-if="!item.hide" @click="onClick(item.value)">
-          <slot :name="'s'+item.value"> 
+          <slot :name="'s_'+item.value"> 
             <span>{{ item.label }} </span>
             <XMarkIcon class="h-5 w-5 shrink-0" v-if="item.delete"/>
           </slot>
