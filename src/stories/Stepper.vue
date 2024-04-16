@@ -16,6 +16,11 @@
     </template>
   </div>
 </template>
+<script>
+  export default {
+    name: 'Stepper',
+  }
+</script>
 <script setup>
 import { Label } from '../components/ui/label';
 import { MapPinIcon } from '@heroicons/vue/24/solid';

@@ -11,6 +11,11 @@
     </div>
   </Card>
 </template>
+<script>
+  export default {
+    name: 'TableCard',
+  }
+</script>
 <script setup>
 import { Card } from '../components/ui/card'
 import { computed, useSlots } from 'vue';

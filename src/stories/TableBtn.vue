@@ -10,6 +10,11 @@
   </slot>
   </Card>
 </template>
+<script>
+  export default {
+    name: 'TableBtn',
+  }
+</script>
 <script setup>
 import { Card } from '../components/ui/card'
 import { computed } from 'vue';

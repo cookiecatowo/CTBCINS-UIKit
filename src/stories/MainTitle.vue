@@ -10,6 +10,11 @@
     </div>
   </div>
 </template>
+<script>
+  export default {
+    name: 'MainTitle',
+  }
+</script>
 <script setup>
 import { computed } from 'vue';
 import { Separator } from '../components/ui/separator'

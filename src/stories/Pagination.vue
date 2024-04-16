@@ -26,11 +26,10 @@
       :disabled="currentPage == totalPages"/>
   </div>
 </template>
-
 <script>
 import { ChevronDoubleLeftIcon, ChevronDoubleRightIcon } from '@heroicons/vue/24/outline';
-
 export default {
+  name: 'Pagination',
   emits: ["update:modelValue"],
   props: {
     modelValue: {

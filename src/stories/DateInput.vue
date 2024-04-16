@@ -17,6 +17,11 @@
     <span v-if="errMsg" class="text-xs text-alert">{{ errMsg }}</span>
   </div>
 </template>
+<script>
+  export default {
+    name: 'DateInput',
+  }
+</script>
 <script setup>
 import { format } from 'date-fns'
 import { Input } from '../components/ui/input'
@@ -78,7 +83,6 @@ const dateDisplay = ref('')
 const date = ref(props.modelValue)
 
 const dateFormater = (value) => {
-  console.log(value)
   let str = value?.replace(/\//g, '-');
   const parts = str.split('-');
   if (parts.length === 3) {
@@ -96,7 +100,6 @@ const dateFormater = (value) => {
   }
 }
 const displayFormater = (value) => {
-  console.log(value)
   return value
 }
 
@@ -112,10 +115,6 @@ watch(() => date.value, (value) => {
   emits('update:modelValue', value)
   
 }, {immediate: true})
-
-
-
-
 </script>
 <style>
   .focus::before {

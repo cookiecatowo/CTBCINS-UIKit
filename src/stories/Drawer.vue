@@ -18,6 +18,11 @@
     </DrawerPortal>
   </Drawer>
 </template>
+<script>
+  export default {
+    name: 'Drawer',
+  }
+</script>
 <script setup>
 import {
   Drawer,

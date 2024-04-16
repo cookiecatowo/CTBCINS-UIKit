@@ -1,4 +1,5 @@
 import 'tailwindcss/tailwind.css'
+// import 'assets/tailwind.js'
 import Button from "./stories/Button.vue";
 import Button3D from "./stories/Button3D.vue";
 import Card from "./stories/Card.vue";
@@ -25,5 +26,21 @@ import TableCard from './stories/TableCard.vue';
 import Tag from './stories/Tag.vue';
 import Tooltip from './stories/Tooltip.vue';
 
-export { Button, Button3D, Card, DatePicker, DateInput, DateRangeInput, Dialog, DialogScroll, Drawer, Input, InsuranceCard, MainTitle, 
-  Pagination, PopMenu, Radio, RadioCard, Select, Stepper, SubTitle, Tab, Table, TableBtn, TableCard, Tag, Tooltip };
+  export {
+    Button, Button3D, Card, DatePicker, DateInput, DateRangeInput, Dialog, DialogScroll, Drawer, Input, InsuranceCard, MainTitle, 
+    Pagination, PopMenu, Radio, RadioCard, Select, Stepper, SubTitle, Tab, Table, TableBtn, TableCard, Tag, Tooltip
+  }
+
+  const Components = [
+    Button, Button3D, Card, DatePicker, DateInput, DateRangeInput, Dialog, DialogScroll, Drawer, Input, InsuranceCard, MainTitle, 
+    Pagination, PopMenu, Radio, RadioCard, Select, Stepper, SubTitle, Tab, Table, TableBtn, TableCard, Tag, Tooltip
+   ]
+
+   const install = function (Vue, opts = {}) {
+    Components.forEach(component => {
+      Vue.component(component.name, component)
+    })
+   }
+   export default {
+    install
+   }

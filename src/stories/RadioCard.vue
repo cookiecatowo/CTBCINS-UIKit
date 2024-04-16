@@ -2,7 +2,7 @@
 <div class="w-full items-center"  :class="{'mt-4 lg:mt-10': props.direction == 'top' }">
   <div class="flex gap-6 lg:gap-y-8" :class="[props.direction == 'top'? '' :'flex-col lg:flex-row flex-wrap']">
     <div
-      class="rounded-[20px] p-5 flex w-full lg:w-[453px] transition-all cursor-pointer" :style="style" v-for="item in list"
+      class="bg-white rounded-[20px] p-5 flex w-full lg:w-[453px] transition-all cursor-pointer" :style="style" v-for="item in list"
       :class="[radio == item.value ? 'outline outline-primary outline-4 radio-card-scale-active' : 'outline outline-border outline-2', direction]" 
       @click="onClick(item.value)">
       <div class="col-span-2 relative flex justify-center items-center" :class="{'pr-4 lg:pr-6': props.direction == 'left' }" >
@@ -20,6 +20,11 @@
   </div>
 </div>
 </template>
+<script>
+  export default {
+    name: 'RadioCard',
+  }
+</script>
 <script setup>
 import { Label } from '../components/ui/label';
 import { computed, defineProps, ref, watch } from 'vue';

@@ -15,6 +15,11 @@
     </TabsContent>
   </Tabs>
 </template>
+<script>
+  export default {
+    name: 'Tab',
+  }
+</script>
 <script setup>
 import {
   Tabs,

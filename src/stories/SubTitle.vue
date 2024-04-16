@@ -10,6 +10,11 @@
     </div>
   </div>
 </template>
+<script>
+  export default {
+    name: 'SubTitle',
+  }
+</script>
 <script setup>
 import { computed } from 'vue';
 

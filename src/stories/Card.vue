@@ -3,6 +3,11 @@
     <slot/>
   </Card>
 </template>
+<script>
+  export default {
+    name: 'Card',
+  }
+</script>
 <script setup>
 import { Card } from '../components/ui/card'
 import { computed } from 'vue';

@@ -14,6 +14,11 @@
     </Tooltip>
   </TooltipProvider>
 </template>
+<script>
+  export default {
+    name: 'Tooltip',
+  }
+</script>
 <script setup>
 import {
   Tooltip,

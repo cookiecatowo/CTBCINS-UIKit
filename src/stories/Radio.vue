@@ -21,6 +21,11 @@
   </div>
   
 </template>
+<script>
+  export default {
+    name: 'Radio',
+  }
+</script>
 <script setup>
 import { Label } from '../components/ui/label';
 import Tooltip from './Tooltip.vue';

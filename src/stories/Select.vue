@@ -27,6 +27,11 @@
     <span v-if="errMsg" class="text-xs text-alert">{{ errMsg }}</span>
   </div>
 </template>
+<script>
+  export default {
+    name: 'Select',
+  }
+</script>
 <script setup >
 import { ref, computed } from 'vue';
 import Tooltip from './Tooltip.vue';

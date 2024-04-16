@@ -11,8 +11,8 @@ export default defineConfig({
   ],
   build: {
     lib: {
-      // 檔案在index.ts匯出，因此將index.ts作為進入點
-      entry: resolve(__dirname, "src/index.ts"),
+      // 檔案在index.js匯出，因此將index.js作為進入點
+      entry: resolve(__dirname, "src/index.js"),
       name: 'b2b-ui-storybook',
       fileName: 'b2b-ui-storybook',
     },

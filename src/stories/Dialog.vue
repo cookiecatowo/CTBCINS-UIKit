@@ -40,6 +40,11 @@
   </Dialog>
   <!-- <button @click="open = true">Click</button> -->
 </template>
+<script>
+  export default {
+    name: 'Dialog',
+  }
+</script>
 <script setup>
 import { computed, ref, watch } from 'vue';
 import { X } from 'lucide-vue-next'

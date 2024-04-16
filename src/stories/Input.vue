@@ -19,6 +19,11 @@
   </div>
   
 </template>
+<script>
+  export default {
+    name: 'Input',
+  }
+</script>
 <script setup>
 import { Input } from '../components/ui/input'
 import Tooltip from './Tooltip.vue';
@@ -74,7 +79,6 @@ const updateModelValue = computed({
   },
   set(newValue) {
     emits("update:modelValue", newValue);
-    // console.log(typeof newValue)
   }
 });
 const focus = () => {

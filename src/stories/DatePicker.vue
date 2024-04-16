@@ -29,6 +29,11 @@
   </div>
 
 </template>
+<script>
+  export default {
+    name: 'DatePicker',
+  }
+</script>
 <script setup>
 import { Calendar as CalendarIcon } from 'lucide-vue-next'
 import { ref, watch } from 'vue';

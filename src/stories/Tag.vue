@@ -3,6 +3,11 @@
       <span class="text-sm text-white font-medium tracking-widest">{{ label }}</span>
   </Label>
 </template>
+<script>
+  export default {
+    name: 'Tag',
+  }
+</script>
 <script setup>
 import { Label } from '../components/ui/label';
 import { computed } from 'vue';

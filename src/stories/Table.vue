@@ -18,6 +18,11 @@
     </table>
   </div>
 </template>
+<script>
+  export default {
+    name: 'Table',
+  }
+</script>
 <script setup>
   import { useSlots } from 'vue';
 

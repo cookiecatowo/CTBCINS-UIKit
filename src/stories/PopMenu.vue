@@ -16,6 +16,11 @@
     </PopoverContent>
   </Popover>
 </template>
+<script>
+  export default {
+    name: 'PopMenu',
+  }
+</script>
 <script setup>
 import {
   Popover,

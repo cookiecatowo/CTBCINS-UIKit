@@ -18,6 +18,11 @@
   </div>
 
 </template>
+<script>
+  export default {
+    name: 'InsuranceCard',
+  }
+</script>
 <script setup>
 import { Card } from '../components/ui/card'
 import { Label } from '../components/ui/label'

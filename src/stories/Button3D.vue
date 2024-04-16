@@ -6,9 +6,13 @@
     <span>{{ label }} </span>
   </button>
 </template>
+<script>
+  export default {
+    name: 'Button3D',
+  }
+</script>
 <script setup>
 import { defineEmits, computed } from 'vue';
- 
 const props = defineProps ({
   label: {
     type: String,
