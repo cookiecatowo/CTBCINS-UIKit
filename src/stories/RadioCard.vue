@@ -2,13 +2,15 @@
 <div class="w-full items-center"  :class="{'mt-4 lg:mt-10': props.direction == 'top' }">
   <div class="flex gap-6 lg:gap-y-8" :class="[props.direction == 'top'? '' :'flex-col lg:flex-row flex-wrap']">
     <div
-      class="bg-white rounded-[20px] p-5 flex w-full lg:w-[453px] transition-all cursor-pointer" :style="style" v-for="item in list"
-      :class="[radio == item.value ? 'outline outline-primary outline-4 radio-card-scale-active' : 'outline outline-border outline-2', direction]" 
-      @click="onClick(item.value)">
+      class=" rounded-[20px] p-5 flex w-full lg:w-[453px] transition-all " :style="style" v-for="item in list"
+      :class="[status(radio == item.value, item.disabled), direction]"
+      @click="onClick(item.value, item.disabled)">
       <div class="col-span-2 relative flex justify-center items-center" :class="{'pr-4 lg:pr-6': props.direction == 'left' }" >
         <img :src="item.img" 
-          class=" lg:max-h-[132px] lg:max-w-[130px] w-fit h-fit"
-          :class="props.direction == 'left'? 'lg:absolute lg:bottom-0 max-w-[110px] max-h-[110px]' :'absolute bottom-4 lg:bottom-2 max-w-[80px] max-h-[80px]'">
+          class=" lg:max-h-[132px] lg:max-w-[130px] w-fit h-fit "
+          :class="[props.direction == 'left'? 'lg:absolute lg:bottom-0 max-w-[110px] max-h-[110px]' :'absolute bottom-4 lg:bottom-2 max-w-[80px] max-h-[80px]',
+          radio != item.value && ( props.disabled || item.disabled ) ? 'grayscale' : '' ]
+          ">
       </div>
       <div class="col-span-3 flex flex-col justify-center gap-y-2 text-sm lg:text-base font-normal" :class="{'items-center': props.direction == 'top' }">
         <Label class="text-lg lg:text-xl font-semibold">{{ item.label }}</Label>
@@ -64,9 +66,11 @@ watch(() => radio.value, (value) => {
   emits('update:modelValue', value )
 })
 
-const onClick = (value) => {
-  radio.value = value
-  emits('click', value);
+const onClick = (value, disabled) => {
+  if(!disabled && !props.disabled) {
+    radio.value = value
+    emits('click', value);
+  }
 };
 
 const direction = computed(() => {
@@ -83,6 +87,17 @@ const style = computed(() => {
     height: props.height
   }
 });
+
+const status = (selected, disabled) => {
+  if( selected ) {
+    return 'outline outline-primary outline-4 radio-card-scale-active bg-white';
+  } else if (props.disabled || disabled ) {
+    return 'outline outline-border outline-2 bg-inputDisabled text-textDisabled cursor-not-allowed';
+  } else {
+    return 'outline outline-border outline-2 bg-white cursor-pointer';
+  }
+};
+
 </script>
 <style>
 .radio-card-scale-active {

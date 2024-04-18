@@ -166,7 +166,7 @@ const vCalendarSlots = computed(() => {
   @apply first:rounded-l-md last:rounded-r-md;
 }
 .calendar .vc-day.is-today:not(:has(.vc-day-layer)) .vc-day-content {
-  @apply bg-[#F0F0F0] text-black rounded-lg;
+  @apply bg-[#F0F0F0] text-black rounded-full;
 }
 .calendar .vc-day:has(.vc-highlight-base-start) {
   @apply rounded-l-md;
