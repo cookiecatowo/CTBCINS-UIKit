@@ -113,7 +113,7 @@ const vCalendarSlots = computed(() => {
   </div>
 </template>
 
-<style lang="css">
+<style lang="scss">
 .calendar {
   @apply p-3 text-center; 
 }
@@ -177,6 +177,28 @@ const vCalendarSlots = computed(() => {
 .calendar .vc-day:has(.vc-highlight-bg-outline):not(:has(.vc-highlight-base-start)):not(:has(.vc-highlight-base-end)) {
   @apply rounded-lg;
 }
+.calendar .vc-day:has(.vc-highlight-base-start) {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    left: 50%;
+    @apply bg-[#F0F0F0];
+  }
+}
+.calendar .vc-day:has(.vc-highlight-base-end) {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    left: 0;
+    @apply bg-[#F0F0F0];
+  }
+}
 .calendar .vc-day-content  {
   @apply text-center text-sm p-0 relative focus-within:relative focus-within:z-20 inline-flex items-center justify-center ring-offset-background hover:transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-border focus-visible:ring-offset-2 hover:bg-[#F0F0F0] hover:text-black h-9 w-9 font-normal aria-selected:opacity-100 select-none;
 }
@@ -191,7 +213,7 @@ const vCalendarSlots = computed(() => {
   @apply bg-primary text-white hover:bg-primary hover:text-white focus:bg-primary focus:text-white z-[1];
 }
 .calendar .vc-highlight-content-light {
-  @apply bg-[#F0F0F0] w-full text-black shadow-[-10px_0px_0px_0px_#F0F0F0,10px_0px_0px_0px_#F0F0F0] ;
+  @apply bg-[#F0F0F0] w-full text-black;
 }
 .calendar .vc-pane-container.in-transition {
   @apply overflow-hidden;
