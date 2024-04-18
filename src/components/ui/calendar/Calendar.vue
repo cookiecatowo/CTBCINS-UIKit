@@ -117,11 +117,11 @@ const vCalendarSlots = computed(() => {
 .calendar {
   @apply p-3 text-center; 
 }
-/* .calendar .vc-pane-layout {
-  @apply grid gap-4;
-} */
 .calendar .vc-pane-layout {
-  @apply flex flex-wrap gap-4;
+  @apply sm:grid gap-4 p-2;
+}
+.vc-pane {
+  @apply pb-4 sm:pb-0;
 }
 .calendar .vc-title {
   @apply text-sm font-medium relative z-20;
@@ -191,13 +191,13 @@ const vCalendarSlots = computed(() => {
   @apply bg-primary text-white hover:bg-primary hover:text-white focus:bg-primary focus:text-white z-[1];
 }
 .calendar .vc-highlight-content-light {
-  @apply bg-[#F0F0F0] text-black shadow-[-10px_0px_0px_0px_#F0F0F0,10px_0px_0px_0px_#F0F0F0];
+  @apply bg-[#F0F0F0] w-full text-black shadow-[-10px_0px_0px_0px_#F0F0F0,10px_0px_0px_0px_#F0F0F0] ;
 }
 .calendar .vc-pane-container.in-transition {
   @apply overflow-hidden;
 }
 .calendar .vc-pane-container {
-  @apply w-full relative;
+  @apply w-full relative ;
 }
 :root {
 	--vc-slide-translate: 22px;

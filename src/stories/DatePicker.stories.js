@@ -7,7 +7,9 @@ export default {
   tags: ['autodocs'],
   argTypes: {
     modelValue: { control: 'date' },
-    range: { control: 'boolean' }
+    range: { control: 'boolean' },
+    minDate: { control: 'date' },
+    maxDate: { control: 'date' },
   },
   
 };
@@ -38,5 +40,18 @@ export const RangeDate = {
 export const Disabled = {
   args: { 
     disabled: true
+  },
+};
+export const MinDate = {
+  args: { 
+    modelValue: null,
+    minDate: '2020/01/01'
+  },
+};
+export const MaxDate = {
+  args: { 
+    modelValue: null,
+    minDate: Date.now(),
+    maxDate: '2024/12/31'
   },
 };

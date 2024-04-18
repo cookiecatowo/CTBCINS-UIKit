@@ -9,7 +9,7 @@
         <Input v-model="dateDisplay" :placeholder="placeholder" :disabled="disabled" 
         class="pr-12" :class="{'pr-20': !!tooltip, 'border-alert': !!errMsg && !isFocus}" @focus="focus" @blur="blur"/>
         <span class="absolute end-0 inset-y-0 flex items-center justify-center px-3 gap-x-2" >
-          <DatePicker v-model="date" :disabled="disabled" range/>
+          <DatePicker v-model="date" :disabled="disabled" :min-date="minDate" :max-date="maxDate" range/>
           <Tooltip :content="tooltip" v-if="tooltip" :size="tSize"/> 
         </span>
       </div>
@@ -32,6 +32,12 @@ import Tooltip from './Tooltip.vue';
 const props = defineProps({
   modelValue: { 
     type: String
+  },
+  minDate: {
+    type: [ Date, Object, String ],
+  },
+  maxDate: {
+    type: [ Date, Object, String ],
   },
   title: {
     type: String,

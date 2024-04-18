@@ -35,7 +35,8 @@ export const Range = {
   args: {
     title: '旅遊期間',
     placeholder: '請輸入旅遊期間',
-    range: true
+    minDate: Date.now(),
+    maxDate: '2024/12/31'
   },
 };
 export const Error = {

@@ -9,8 +9,13 @@
           v-if="range"
           v-model.range="date"
           :columns="2"
+          :min-date="minDate"
+          :max-date="maxDate" 
         />
-        <Calendar v-else v-model="date" />
+        <Calendar v-else v-model="date" 
+          :min-date="minDate"
+          :max-date="maxDate" 
+        />
       </PopoverContent>
     </Popover>
     <CalendarIcon class="mr-2 h-4 w-4 text-border" v-else/>
@@ -18,16 +23,22 @@
   <div class="block sm:hidden">
     <CalendarIcon class="mr-2 h-4 w-4 text-[#7A7A7A] cursor-pointer" v-if="!disabled" @click="open = true"/>
     <CalendarIcon class="mr-2 h-4 w-4 text-border" v-else/>
-    <Dialog v-model="open" class="block sm:hidden" :size="range ? 'w-[320px] h-[90%] max-h-[740px]' : 'w-[310px]'" scroll padding="30px 15px 10px 15px">
+    <Drawer v-model="open" hidden="sm:hidden" maxHeight="95vh">
       <Calendar
           v-if="range"
           v-model.range="date"
-          :columns="2"
+          :columns="12" 
+          :min-date="minDate"
+          :max-date="maxDate"
         />
-        <Calendar v-else v-model="date" />
-    </Dialog>
-  </div>
+        <Calendar v-else 
+          v-model="date"
+          :min-date="minDate"
+          :max-date="maxDate" 
+        />
+    </Drawer>
 
+  </div>
 </template>
 <script>
   export default {
@@ -43,7 +54,9 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from '../components/ui/popover'
-import Dialog from './Dialog.vue';
+import Drawer from './Drawer.vue';
+import { useWindowSize } from '@vueuse/core'
+
 const props = defineProps({
   modelValue: { 
     type: [ Date, Object, String ],
@@ -55,7 +68,13 @@ const props = defineProps({
   disabled: { 
     type: Boolean,
     default: false 
-  }
+  },
+  minDate: {
+    type: [ Date, Object, String ],
+  },
+  maxDate: {
+    type: [ Date, Object, String ],
+  },
 })
 
 const date = ref(props.modelValue)
@@ -68,6 +87,12 @@ watch(() => date.value, (value) => {
   if(value){
     emits('update:modelValue', value )
   }
+})
 
+const { width } = useWindowSize()
+watch( width, (newWidth) => {
+  if (newWidth >= 640) {
+    open.value = false
+  } 
 })
 </script>

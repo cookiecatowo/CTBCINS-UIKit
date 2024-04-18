@@ -35,7 +35,8 @@ export const Range = {
   args: {
     title: '起程時間',
     placeholder: '請輸入起程時間',
-    range: true
+    minDate: Date.now(),
+    maxDate: '2024/12/31'
   },
 };
 export const Error = {

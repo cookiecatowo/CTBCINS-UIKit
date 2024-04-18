@@ -1,9 +1,9 @@
 <template>
   <Drawer :open="open" @update:open="(value) => close(value)">
     <!-- <DrawerTrigger>Open</DrawerTrigger> -->
-    <DrawerPortal>
-      <DrawerOverlay/>
-      <DrawerContent>
+    <DrawerPortal >
+      <DrawerOverlay :class="hidden"/>
+      <DrawerContent class="max-h-[67vh]" :class="hidden" :style="style">
         <div class="overflow-y-auto">
           <slot></slot>
         </div>
@@ -24,6 +24,7 @@
   }
 </script>
 <script setup>
+import { Computer } from 'lucide-vue-next';
 import {
   Drawer,
   DrawerClose,
@@ -33,13 +34,19 @@ import {
   DrawerOverlay,
 } from '../components/ui/drawer'
 import { DrawerPortal } from "vaul-vue";
-import { ref, watch } from 'vue'; 
+import { ref, watch, computed } from 'vue'; 
 
 const props = defineProps({
   modelValue: {
     type: Boolean,
     default: false
   },
+  maxHeight: {
+    type: String
+  },
+  hidden: {
+    type: String
+  }
 })
 
 const open = ref(props.modelValue)
@@ -56,5 +63,9 @@ const close = (value) => {
     emits('close')  
   }
 }
-
+const style = computed(() => {
+  return {
+    maxHeight: props.maxHeight
+  }
+})
 </script>
