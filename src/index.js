@@ -11,7 +11,9 @@ import DialogScroll from './stories/DialogScroll.vue';
 import Drawer from './stories/Drawer.vue';
 import Input from './stories/Input.vue';
 import InsuranceCard from './stories/InsuranceCard.vue';
+import Loading from './stories/Loading.vue';
 import MainTitle from './stories/MainTitle.vue';
+import Overlay from './stories/Overlay.vue';
 import Pagination from './stories/Pagination.vue';
 import PopMenu from './stories/PopMenu.vue';
 import Radio from './stories/Radio.vue';
@@ -27,12 +29,12 @@ import Tag from './stories/Tag.vue';
 import Tooltip from './stories/Tooltip.vue';
 
   export {
-    Button, Button3D, Card, DatePicker, DateInput, DateRangeInput, Dialog, DialogScroll, Drawer, Input, InsuranceCard, MainTitle, 
+    Button, Button3D, Card, DatePicker, DateInput, DateRangeInput, Dialog, DialogScroll, Drawer, Input, InsuranceCard, Loading, MainTitle, Overlay,
     Pagination, PopMenu, Radio, RadioCard, Select, Stepper, SubTitle, Tab, Table, TableBtn, TableCard, Tag, Tooltip
   }
 
   const Components = [
-    Button, Button3D, Card, DatePicker, DateInput, DateRangeInput, Dialog, DialogScroll, Drawer, Input, InsuranceCard, MainTitle, 
+    Button, Button3D, Card, DatePicker, DateInput, DateRangeInput, Dialog, DialogScroll, Drawer, Input, InsuranceCard, Loading, MainTitle, Overlay, 
     Pagination, PopMenu, Radio, RadioCard, Select, Stepper, SubTitle, Tab, Table, TableBtn, TableCard, Tag, Tooltip
    ]
 

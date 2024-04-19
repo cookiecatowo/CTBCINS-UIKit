@@ -7,6 +7,7 @@ import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
 export default defineConfig({
   plugins: [
     vue(),
+    //將css注入打包完js中的插件
     cssInjectedByJsPlugin(),
   ],
   build: {
