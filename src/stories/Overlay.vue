@@ -3,6 +3,7 @@
      <DialogPortal>
       <DialogOverlay
         class="fixed inset-0 z-50 grid place-items-center bg-[#000000]/50 backdrop-blur data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"
+        :style="style"
       >
         <slot></slot>
       </DialogOverlay>
@@ -15,7 +16,7 @@
   }
 </script>
 <script setup>
-  import { ref, watch } from 'vue';
+  import { computed, ref, watch } from 'vue';
   import {
     Dialog,
   } from '../components/ui/dialog'
@@ -27,6 +28,9 @@
     modelValue: {
       type: Boolean,
       default: false
+    },
+    zIndex: {
+      type: String
     }
   })
   const open = ref(props.modelValue)
@@ -36,5 +40,11 @@
   }, {immediate: true})
   watch(() => open.value, (value) => {
     emits('update:modelValue', value )
+  })
+
+  const style = computed(() => {
+    return {
+      zIndex: props.zIndex
+    }
   })
 </script>

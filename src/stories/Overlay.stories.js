@@ -6,6 +6,7 @@ export default {
   component: Overlay,
   argTypes: {
     modelValue: { control: 'boolean' },
+    zIndex: { control: 'text' },
   },
   args: { onClick: fn() },
 }
@@ -26,4 +27,11 @@ export const Slot = {
       }
     }
   }
+}
+export const ZIndex = {
+  args: {
+    modelValue: true,
+    zIndex: '100',
+  },
+
 }

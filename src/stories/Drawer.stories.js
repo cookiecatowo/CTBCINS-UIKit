@@ -32,3 +32,16 @@ export const Scroll = {
     }
   }
 };
+export const NoFooter = {
+  args: {
+    modelValue: true,
+    footer: false
+  },
+  parameters: {
+    slots: {
+      default: {
+        template: '<div v-for="n in 4" class="h-[50px] border-b flex items-center">{{"list " + n}}</div>'
+      }
+    }
+  }
+};

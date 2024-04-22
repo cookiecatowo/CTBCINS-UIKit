@@ -7,7 +7,7 @@
         <div class="overflow-y-auto">
           <slot></slot>
         </div>
-        <DrawerFooter>
+        <DrawerFooter v-if="!!footer">
           <DrawerClose>
             <div class="flex justify-end">
               <button class="text-sm text-primary font-semibold">確定</button>
@@ -46,6 +46,10 @@ const props = defineProps({
   },
   hidden: {
     type: String
+  },
+  footer: {
+    type: Boolean,
+    default: true
   }
 })
 
