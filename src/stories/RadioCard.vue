@@ -1,5 +1,5 @@
 <template> 
-<div class="w-full items-center"  :class="{'mt-4 lg:mt-10': props.direction == 'top' }">
+<div class="items-center"  :class="{'mt-4 lg:mt-10': props.direction == 'top' }">
   <div class="flex gap-6 lg:gap-y-8" :class="[props.direction == 'top'? '' :'flex-col lg:flex-row flex-wrap']">
     <div
       class=" rounded-[20px] p-5 flex w-full lg:w-[453px] transition-all " :style="style" v-for="item in list"

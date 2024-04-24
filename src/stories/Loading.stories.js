@@ -14,7 +14,7 @@ export default {
 export const Default = {
   args: {
     modelValue: true
-  }
+  },
 }
 export const CoustomImg = {
   args: {

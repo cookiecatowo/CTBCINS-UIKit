@@ -1,7 +1,10 @@
 <template>
   <Popover>
     <PopoverTrigger as-child>
-        <EllipsisHorizontalIcon class="text-label h-9 w-9 cursor-pointer"/>
+        <div class="bg-white h-9 w-9 rounded-full hamburger flex items-center justify-center" v-if="hamburger">
+          <Bars3BottomRightIcon class="w-5 stroke-2 text-primary"/>
+        </div>
+        <EllipsisHorizontalIcon class="text-label h-9 w-9 cursor-pointer" v-else/>
     </PopoverTrigger>
     <PopoverContent class="w-[180px] grid p-0 rounded-lg divide-y m-2 shadow">
       <template v-for="item in list">
@@ -27,12 +30,16 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from '../components/ui/popover';
-import { EllipsisHorizontalIcon } from '@heroicons/vue/24/solid'
+import { EllipsisHorizontalIcon, Bars3BottomRightIcon } from '@heroicons/vue/24/solid'
 import { XMarkIcon } from "@heroicons/vue/24/outline";
 
 const props = defineProps({
   list: {
     type: Array,
+  },
+  hamburger: {
+    type: Boolean,
+    default: false
   }
 })
 
@@ -44,5 +51,8 @@ const onClick = (value) => {
 <style>
 shadow {
   box-shadow: 0px 4px 10.2px 0px #0000001A;
+}
+.hamburger {
+  box-shadow: 2px 4px 8.8px 0px #CEE2F0;
 }
 </style>

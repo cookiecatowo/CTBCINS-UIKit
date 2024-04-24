@@ -5,14 +5,21 @@
         class="fixed inset-0 z-50 grid place-items-center bg-[#000000]/50 backdrop-blur data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"
         :style="style"
       >
-        <slot></slot>
+        <slot>
+          <div class="bg-white fixed w-[50px] h-[50px] z-[100] hover:bg-black">
+            123123
+          </div>
+        </slot>
       </DialogOverlay>
     </DialogPortal>
   </Dialog>
+  <div class="bg-white fixed w-[50px] h-[50px] z-[100] hover:bg-black">
+    123123
+  </div>
 </template>
 <script>
   export default {
-    name: 'Loading',
+    name: 'Overlay',
   }
 </script>
 <script setup>

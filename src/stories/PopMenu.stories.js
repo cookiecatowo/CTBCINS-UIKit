@@ -7,6 +7,7 @@ export default {
   tags: ['autodocs'],
   argTypes: {
     list: { control: 'array' },
+    hamburger: { control: 'boolean' },
   },
   args: { onClick: fn() },
 };
@@ -16,6 +17,14 @@ export const Default = {
     list: [{ value: '01', label: '修改' },
       { value: '02', label: '檢視' },
       { value: '03', label: '刪除資料', delete: true },]
+  }
+};
+export const Hamburger = {
+  args: {
+    list: [{ value: '01', label: '修改' },
+      { value: '02', label: '檢視' },
+      { value: '03', label: '刪除資料', delete: true },],
+      hamburger: true
   }
 };
 export const Hide = {
