@@ -14,8 +14,8 @@ export default defineConfig({
     lib: {
       // 檔案在index.js匯出，因此將index.js作為進入點
       entry: resolve(__dirname, "src/index.js"),
-      name: 'b2b-ui-storybook',
-      fileName: 'b2b-ui-storybook',
+      name: 'ctbcins-uikit',
+      fileName: 'ctbcins-uikit',
     },
     rollupOptions: {
       // 設定vue原檔不會被打包進lib
